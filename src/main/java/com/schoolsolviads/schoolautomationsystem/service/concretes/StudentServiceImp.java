@@ -24,8 +24,8 @@ public class StudentServiceImp implements StudentService {
     }
 
     @Override
-    public int updateStudentNameById(String name, long id) {
-       return this.studentRepository.updateStudentNameById(name, id);
+    public void updateStudentNameById(String name, long id) {
+        this.studentRepository.updateStudentNameById(name, id);
     }
 
 

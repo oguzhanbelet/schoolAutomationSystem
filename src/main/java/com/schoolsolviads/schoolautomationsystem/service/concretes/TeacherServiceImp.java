@@ -39,7 +39,7 @@ public class TeacherServiceImp implements TeacherService {
     }
 
     @Override
-    public int updateTeacherNameById(String name, long id) {
-        return this.teacherRepository.updateTeacherNameById(name, id);
+    public void updateTeacherNameById(String name, long id) {
+        this.teacherRepository.updateTeacherNameById(name, id);
     }
 }

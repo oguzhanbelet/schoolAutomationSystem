@@ -18,5 +18,5 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     @Modifying
     @Query("update Student s set s.studentName = ?1 where s.id = ?2")
-    int updateStudentNameById(String name, long id);
+    void updateStudentNameById(String name, long id);
 }
