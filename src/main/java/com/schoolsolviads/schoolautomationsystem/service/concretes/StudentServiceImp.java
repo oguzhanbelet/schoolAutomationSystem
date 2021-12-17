@@ -4,7 +4,6 @@ import com.schoolsolviads.schoolautomationsystem.model.concretes.Student;
 import com.schoolsolviads.schoolautomationsystem.model.dto.StudentDto;
 import com.schoolsolviads.schoolautomationsystem.repository.StudentRepository;
 import com.schoolsolviads.schoolautomationsystem.service.abstracts.StudentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,8 +24,8 @@ public class StudentServiceImp implements StudentService {
     }
 
     @Override
-    public void updateStudentNameById(String name, long id) {
-        this.studentRepository.updateStudentNameById(name, id);
+    public int updateStudentNameById(String name, long id) {
+       return this.studentRepository.updateStudentNameById(name, id);
     }
 
 

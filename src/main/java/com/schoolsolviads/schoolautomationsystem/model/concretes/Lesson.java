@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -18,6 +19,9 @@ public class Lesson {
     private long id;
 
     private String lessonName;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lessonStartTime;
 
     @OneToMany(mappedBy = "lesson")
     public Collection<Teacher> teachers;

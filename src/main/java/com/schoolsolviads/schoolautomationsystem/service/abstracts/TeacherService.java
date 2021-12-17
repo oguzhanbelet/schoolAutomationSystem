@@ -9,5 +9,5 @@ public interface TeacherService {
     void addTeacher(Teacher teacher);
     List<TeacherDto> getAllTeachersWithDetails();
     void deleteTeacherById(long id);
-    void updateTeacherNameById(String name, long id);
+    int updateTeacherNameById(String name, long id);
 }

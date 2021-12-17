@@ -33,7 +33,7 @@ public class TeacherController {
     }
 
     @PutMapping("/updateTeacherNameById")
-    public void updateTeacherNameById(@RequestParam String name, @RequestParam long id){
-        this.teacherService.updateTeacherNameById(name,id);
+    public int updateTeacherNameById(@RequestParam String name, @RequestParam long id){
+        return this.teacherService.updateTeacherNameById(name,id);
     }
 }

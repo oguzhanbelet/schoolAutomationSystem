@@ -17,6 +17,6 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     List<StudentDto> getAllStudentsWithDetails();
 
     @Modifying
-    @Query("update Student s set s.studentName =? 1 where s.id =? 2")
-    void updateStudentNameById(String name, long id);
+    @Query("update Student s set s.studentName = ?1 where s.id = ?2")
+    int updateStudentNameById(String name, long id);
 }
