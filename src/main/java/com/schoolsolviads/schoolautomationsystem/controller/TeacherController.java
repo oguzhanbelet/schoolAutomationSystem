@@ -31,4 +31,9 @@ public class TeacherController {
     public void deleteTeacherById(@RequestParam long id){
         this.teacherService.deleteTeacherById(id);
     }
+
+    @PutMapping("/updateTeacherNameById")
+    public void updateTeacherNameById(@RequestParam String name, @RequestParam long id){
+        this.teacherService.updateTeacherNameById(name,id);
+    }
 }

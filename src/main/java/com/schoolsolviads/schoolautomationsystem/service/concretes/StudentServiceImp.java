@@ -14,7 +14,7 @@ public class StudentServiceImp implements StudentService {
 
     private final StudentRepository studentRepository;
 
-    @Autowired
+
     public StudentServiceImp(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
@@ -22,6 +22,11 @@ public class StudentServiceImp implements StudentService {
     @Override
     public void deleteStudentById(long id){
         this.studentRepository.deleteById(id);
+    }
+
+    @Override
+    public void updateStudentNameById(String name, long id) {
+        this.studentRepository.updateStudentNameById(name, id);
     }
 
 

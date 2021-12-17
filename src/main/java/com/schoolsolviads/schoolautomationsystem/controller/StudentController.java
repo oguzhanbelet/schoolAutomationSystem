@@ -3,7 +3,6 @@ package com.schoolsolviads.schoolautomationsystem.controller;
 import com.schoolsolviads.schoolautomationsystem.model.concretes.Student;
 import com.schoolsolviads.schoolautomationsystem.model.dto.StudentDto;
 import com.schoolsolviads.schoolautomationsystem.service.abstracts.StudentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
 public class StudentController {
     private final StudentService studentService;
 
-    @Autowired
+
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
@@ -28,9 +27,13 @@ public class StudentController {
         return this.studentService.getAllStudentsWithDetails();
     }
 
-
     @DeleteMapping("/deleteStudentById")
     public void deleteStudentById(@RequestParam long id){
         this.studentService.deleteStudentById(id);
+    }
+
+    @PutMapping("/updateStudentNameById")
+    public void updateStudentNameById(@RequestParam String name, @RequestParam long id){
+        this.studentService.updateStudentNameById(name, id);
     }
 }
